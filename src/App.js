@@ -7,14 +7,14 @@ import './App.css';
 
 // import TestClass from './classComp';
 
-import Header from './classHeader';
+import Header from './practices/classHeader';
 // import Products from './classProducts';
-import Main from './classMain';
-import Footer from './classFooter';
+import Main from './practices/classMain';
+import Footer from './practices/classFooter';
 
-import HeaderFunc from './fnHeader';
-import MainFunc from './fnMain';
-import FooterFunc from './fnFooter';
+import HeaderFunc from './practices/fnHeader';
+import MainFunc from './practices/fnMain';
+import FooterFunc from './practices/fnFooter';
 
 // function App() {
 //   const values = [1, 2, 3, 4, 5];
