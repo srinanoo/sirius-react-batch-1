@@ -57,9 +57,9 @@ class Header extends React.Component {
                     <div>Header Container</div>
                     <div>HEre: {this.state.login.toString()}</div>
                     <div>
-                        {/* <Menu /> */}
+                        <Menu />
 
-                        <nav>
+                        {/* <nav>
                             
                             <ul>
                                 <li>Menu 1</li>
@@ -88,16 +88,13 @@ class Header extends React.Component {
                                         //         <a href="#l" id="login" onClick={this.goLogin}>Login</a>
 
                                         // (this.state.login) && <a href="#l" id="logout" onClick={this.goLogin}>Logout</a> 
-                                    }
-                                    
-                                    
-                                    
+                                    }                                    
 
-                                    {/* <button id="login" onClick={this.goLogin}>Login</button>
-                                    <button id="logout" onClick={this.goLogin}>Logout</button> */}
+                                    <button id="login" onClick={this.goLogin}>Login</button>
+                                    <button id="logout" onClick={this.goLogin}>Logout</button>
                                 </li>
                             </ul>
-                        </nav>
+                        </nav> */}
                         
                     </div>
                     <div style={{"backgroundColor": "red", "color": "white"}}>
@@ -116,45 +113,63 @@ class Header extends React.Component {
 //     (this.state.logged) ? (<Logout />, <button id="logout" onClick={this.doLogin}>Logout</button>) : (<Login />, <button id="login" onClick={this.doLogin}>Login</button>)
 // }
 
-// class Menu extends React.Component {
+class Menu extends React.Component {
 
-//     constructor() {
-//         super();
+    constructor() {
+        super();
 
-//         // this.state = {
-//         //     "logged": false
-//         // }
-//     }
+        this.state = {
+            "logged": false
+        }
+    }
 
-//     // goLogin = (event) => {
-//     //     event.preventDefault();
-//     //     console.log(event.target.id);
+    goLogin = (event) => {
+        event.preventDefault();
+        console.log(event.target.id);
 
-//     //     (event.target.id === "login") ? this.setState({"logged": true}) : this.setState({"logged": false})
-//     // }
+        (event.target.id === "login") ? this.setState({"logged": true}) : this.setState({"logged": false})
+    }
 
-//     render() {
-//         return (
-//             <nav>
-//                 {/* {this.state.logged} */}
-//                 <ul>
-//                     <li>Menu 1</li>
-//                     <li>Menu 2</li>
-//                     <li>Menu 3</li>
-//                     <li>Menu 4</li>
-//                     <li>
+    render() {
+        return (
+            <nav>
+                {/* {this.state.logged} */}
+                <ul>
+                    <li>Menu 1</li>
+                    <li>Menu 2</li>
+                    <li>Menu 3</li>
+                    <li>Menu 4</li>
+                    <li>
                         
-//                         <a href="#l" id="login" onClick={this.goLogin}>Login</a>
-//                         <a href="#l" id="logout" onClick={this.goLogin}>Logout</a>
+                        {/* {
+                            (this.state.logged) 
+                                ? 
+                                    <a href="#l" id="logout" onClick={this.goLogin}>Logout</a> 
+                                : 
+                                    <a href="#l" id="login" onClick={this.goLogin}>Login</a>
+                        } */}
 
-//                         {/* <button id="login" onClick={this.goLogin}>Login</button>
-//                         <button id="logout" onClick={this.goLogin}>Logout</button> */}
-//                     </li>
-//                 </ul>
-//             </nav>
-//         )
-//     }
-// }
+                        {
+                            (this.state.logged) ?
+                                <>
+                                    <Logout />
+                                    <a href="#l" id="logout" onClick={this.goLogin}>Logout</a> 
+                                </>
+                                :
+                                <>
+                                    <Login />
+                                    <a href="#l" id="login" onClick={this.goLogin}>Login</a>
+                                </>
+                        }
+
+                        {/* <button id="login" onClick={this.goLogin}>Login</button>
+                        <button id="logout" onClick={this.goLogin}>Logout</button> */}
+                    </li>
+                </ul>
+            </nav>
+        )
+    }
+}
 
 // class Circle extends React.Component {
 //     constructor(props) {

@@ -32,6 +32,15 @@ function HeaderFunc(props) {
 }
 
 function MenuFunc() {
+    const [logged, setLogged] = useState(false);
+
+    const goLogin = (event) => {
+        event.preventDefault();
+        console.log(event.target.id);
+
+        (event.target.id === "login") ? setLogged(true) : setLogged(false);
+    }
+
     return (
         <>
             <nav>
@@ -40,6 +49,15 @@ function MenuFunc() {
                     <li>Func Menu 1</li>
                     <li>Func Menu 1</li>
                     <li>Func Menu 1</li>
+                    <li>
+                        {
+                            (logged) 
+                                ? 
+                                    <a href="#l" id="logout" onClick={goLogin}>Logout</a> 
+                                : 
+                                    <a href="#l" id="login" onClick={goLogin}>Login</a>
+                        }
+                    </li>
                 </ul>
             </nav>
         </>
