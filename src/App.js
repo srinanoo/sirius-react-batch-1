@@ -7,14 +7,17 @@ import './App.css';
 
 // import TestClass from './classComp';
 
-import Header from './practices/classHeader';
+// import Header from './practices/classHeader';
 // import Products from './classProducts';
-import Main from './practices/classMain';
-import Footer from './practices/classFooter';
+// import Main from './practices/classMain';
+// import Footer from './practices/classFooter';
+// import FormClass from './practices/classForm';
 
-import HeaderFunc from './practices/fnHeader';
-import MainFunc from './practices/fnMain';
-import FooterFunc from './practices/fnFooter';
+// import HeaderFunc from './practices/fnHeader';
+// import MainFunc from './practices/fnMain';
+// import FooterFunc from './practices/fnFooter';
+
+import ClassCycle from './practices/classCycles';
 
 // function App() {
 //   const values = [1, 2, 3, 4, 5];
@@ -46,13 +49,19 @@ function App() {
   return(
     <>
       <h1>ReactJs</h1>
-      <Header id="1" name="Dinesh" />
+      {/* <Header id="1" name="Dinesh" />
       <Main />
-      <Footer />
+      <Footer /> */}
+      {/* <h2>Forms - Class Component</h2>
+      <FormClass /> */}
 
-      <HeaderFunc id="2" name="Tony" />
+      <ClassCycle id="1" name="Dinesh" subject="ReactJs" />
+
+      {/* <HeaderFunc id="2" name="Tony" />
       <MainFunc />
-      <FooterFunc />
+      <FooterFunc /> */}
+
+      {/* <h2>Forms - Function Component</h2> */}
     </>
   )
 }
