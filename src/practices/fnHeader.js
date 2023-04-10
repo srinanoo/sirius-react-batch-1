@@ -8,6 +8,8 @@ function HeaderFunc(props) {
         "dateJoined": "01/01/2023"
     });
 
+    console.log(props);
+
     const updateState = () => {
         // setDetails(()=> ({"id": 2, "name":"New Name", "dateJoined": "05/05/2023"}));
 

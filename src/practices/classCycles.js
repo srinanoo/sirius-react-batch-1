@@ -24,17 +24,17 @@ class ClassCycle extends React.Component {
     componentDidMount() {
         this.setState(() => ({ "id": 2, "name": "New Name", "subject": "NodeJs" }));
 
-        let apiURL = "/getAll/?username=Dinesh&password=TEST123!"
-        this.timer = setInterval(() => {
-            axiosAPI.get(apiURL)
-            .then(res => {
-                // console.log(res);
-                console.log(res.data);
-                console.log(res.data.username, "username from API");
-                console.log(res.data.password, "password from API");
-            })
-            .catch(err => console.log(err.message));
-        }, 10000);
+        // let apiURL = "/getAll/?username=Dinesh&password=TEST123!"
+        // this.timer = setInterval(() => {
+        //     axiosAPI.get(apiURL)
+        //     .then(res => {
+        //         // console.log(res);
+        //         console.log(res.data);
+        //         console.log(res.data.username, "username from API");
+        //         console.log(res.data.password, "password from API");
+        //     })
+        //     .catch(err => console.log(err.message));
+        // }, 10000);
     }
 
     updateStates = () => {
@@ -52,6 +52,16 @@ class ClassCycle extends React.Component {
 
     componentDidUpdate() {
         console.log(this.state.id, this.state.name, "componentDidUpdate");
+        let apiURL = "/getAll/?username=Dinesh&password=TEST123!"
+        axiosAPI.get(apiURL)
+            .then(res => {
+                // console.log(res);
+                console.log(res.data);
+                console.log(res.data.username, "username from API");
+                console.log(res.data.password, "password from API");
+                this.state.name = res.data.username;
+            })
+            .catch(err => console.log(err.message));
     }
 
     componentWillUnmount() {

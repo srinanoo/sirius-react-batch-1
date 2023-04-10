@@ -1,6 +1,7 @@
 
 // import bg from './images/background.jpeg';
 // import profilePic from './images/Dinesh.jpg';
+import { useState } from 'react';
 import './App.css';
 // import color from './color.module.css';
 // import './styles.scss';
@@ -13,11 +14,19 @@ import './App.css';
 // import Footer from './practices/classFooter';
 // import FormClass from './practices/classForm';
 
-// import HeaderFunc from './practices/fnHeader';
-// import MainFunc from './practices/fnMain';
-// import FooterFunc from './practices/fnFooter';
+import HeaderFunc from './practices/fnHeader';
+import MainFunc from './practices/fnMain';
+import FooterFunc from './practices/fnFooter';
 
-import ClassCycle from './practices/classCycles';
+// import ClassCycle from './practices/classCycles';
+// import FuncHooks, { FuncUseMemo } from './practices/fnHooks';
+
+// import FuncPropType from './practices/fnPropTypes';
+
+import FuncHOC from './practices/fnHOC';
+
+import ErrorBoundary from './practices/classError';
+import TestClass from './practices/classComp';
 
 // function App() {
 //   const values = [1, 2, 3, 4, 5];
@@ -46,6 +55,12 @@ import ClassCycle from './practices/classCycles';
 // }
 
 function App() {
+  const [logged, setLogged] = useState(false);
+
+  const HeaderComponent = FuncHOC(HeaderFunc);
+  const FooterComponent = FuncHOC(FooterFunc);
+  const MainComponent = FuncHOC(MainFunc);
+
   return(
     <>
       <h1>ReactJs</h1>
@@ -55,13 +70,50 @@ function App() {
       {/* <h2>Forms - Class Component</h2>
       <FormClass /> */}
 
-      <ClassCycle id="1" name="Dinesh" subject="ReactJs" />
+      {/* <ClassCycle id="1" name="Dinesh" subject="ReactJs" /> */}
 
       {/* <HeaderFunc id="2" name="Tony" />
       <MainFunc />
       <FooterFunc /> */}
 
       {/* <h2>Forms - Function Component</h2> */}
+
+      {/* <FuncHooks /> */}
+      {/* { <FuncUseMemo /> } */}
+
+      {/* <FuncPropType id={1} /> */}
+
+      {/* {logged.toString()}
+      {
+        logged
+          ? 
+            <button onClick={() => setLogged(false)}>Logout</button>
+          :
+            <button onClick={() => setLogged(true)}>Login</button>
+      }
+      <HeaderComponent logged={logged} />
+      <MainComponent logged={logged} />
+      <FooterComponent logged={logged} /> */}
+
+      <ErrorBoundary>
+        <TestClass />
+      </ErrorBoundary>
+
+      <ErrorBoundary>
+        <TestClass />
+      </ErrorBoundary>
+
+      {logged.toString()}
+      {
+        logged
+          ? 
+            <button onClick={() => setLogged(false)}>Logout</button>
+          :
+            <button onClick={() => setLogged(true)}>Login</button>
+      }
+      <HeaderComponent logged={logged} />
+      <MainComponent logged={logged} />
+      <FooterComponent logged={logged} />
     </>
   )
 }
